@@ -1,0 +1,39 @@
+60.times do
+  shuffle_reels
+  print @reels.join("\t") + "\r"
+  $stdout.flush
+  sleep(0.03)
+end
+
+def play
+  @reels = []
+  60.times do
+    @reels = []
+    3.times do
+      @reels << SYMBOLS.sample
+    end
+    print "|\t" + @reels.join("\t|\t") + "\t|\r"
+    $stdout.flush
+    sleep(0.03)
+  end
+  puts "-" * 49
+  print "|\t" + @reels.join("\t|\t") + "\t|\r"
+  puts "\n" + "-" * 49
+  return @reels
+end
+
+
+%w[⭐️ 🛎 7️⃣], 0
+%w[🤩 🤩 🤩], 50
+%w[⭐️ ⭐️ ⭐️], 40
+%w[🛎 🛎 🛎], 30
+%w[7️⃣ 7️⃣ 7️⃣], 20
+%w[🍒 🍒 🍒], 10
+%w[🤩 ⭐️ ⭐️], 20
+%w[🤩 🛎 🛎], 15
+%w[🤩 7️⃣ 7️⃣], 10
+%w[🤩 🍒 🍒], 5
+%w[🤩 🤩 ⭐️], 25
+%w[🤩 🤩 🛎], 25
+%w[🤩 🤩 7️⃣], 25
+%w[🤩 🤩 🍒], 25
